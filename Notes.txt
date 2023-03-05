@@ -1,0 +1,2 @@
+python3 bovada/bovada_basketball.py
+python3 betfair/betfair_basketball.py

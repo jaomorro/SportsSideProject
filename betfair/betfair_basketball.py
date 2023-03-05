@@ -13,8 +13,7 @@ import argparse
 logger = create_logger()
 
 WEBSITE = "betfair"
-# SPORT = "basketball"
-# WEBSITE_BASE_URL = "http://www.betfair.com"
+SPORT = "basketball"
 
 
 def bet_type_finder(
@@ -195,13 +194,13 @@ def create_df_with_lines(extracted_data_files_directory: str):
     :return: pandas dataframe of betting info
     """
 
-    sports_betting_info = read_json_file(f"{Path(__file__).parents[0]}/constants/betting_sites_info.json")[WEBSITE]
+    sports_betting_info = read_json_file(f"{Path(__file__).parents[1]}/constants/betting_sites_info.json")[WEBSITE]
     website_base_url = sports_betting_info["website_base_url"]
 
     all_games_file_name = "all_games.txt"
 
     extract_from_url(
-        url=f"{website_base_url}/sport/basketball/nba/10547864",
+        url=f"{website_base_url}/sport/{SPORT}/nba/10547864",
         file_path=os.path.join(extracted_data_files_directory, all_games_file_name)
     )
 
