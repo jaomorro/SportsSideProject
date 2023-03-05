@@ -1,0 +1,10 @@
+{
+    "bovada": {
+      "website_base_url": "https://www.bovada.lv/services/sports/event/v2/events/A/description",
+      "sports": ["basketball"]
+    },
+    "betfair": {
+      "website_base_url": "http://www.betfair.com",
+      "sports": ["basketball"]
+    }
+  }

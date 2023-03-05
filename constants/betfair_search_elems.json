@@ -1,0 +1,22 @@
+{
+    "search_elems": [
+          {
+            "bet_type": "minimarket-MONEY_LINE",
+            "bet_type_normalized": "moneyline",
+            "has_teams": true,
+            "has_handicap": false
+          },
+          {
+            "bet_type": "minimarket-MATCH_ODDS_HANDICAP",
+            "bet_type_normalized": "handicap",
+            "has_teams": true,
+           "has_handicap": true
+          },
+          {
+            "bet_type": "minimarket-OVERUNDER_POINTS",
+            "bet_type_normalized": "over_under",
+            "has_teams": false,
+           "has_handicap": true
+          }
+      ]
+  }

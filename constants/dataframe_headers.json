@@ -1,0 +1,20 @@
+{
+    "df_event_headers": [
+        "event_id",
+        "event_date",
+        "data_competition",
+        "away_team",
+        "home_team"
+    ],
+    "df_records_headers": [
+        "website",
+        "event_id",
+        "bet_type",
+        "team",
+        "american_line",
+        "decimal_line",
+        "fractional_line",
+        "handicap_spread",
+        "over_under"
+    ]
+  }
