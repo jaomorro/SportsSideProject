@@ -63,7 +63,7 @@ def extract_from_url(
     return True
 
 
-def read_data(
+def read_html_data(
         file_path: str
 ):
     """

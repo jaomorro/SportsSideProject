@@ -5,7 +5,7 @@ import pandas as pd
 import os
 import random
 from pathlib import Path
-from utility.helper_functions import extract_from_url, read_data, read_json_file, get_data_directory
+from utility.helper_functions import extract_from_url, read_html_data, read_json_file, get_data_directory
 from utility.logging_utils import create_logger
 import argparse
 
@@ -133,7 +133,7 @@ def extract_bet_data_from_html(
                         file_path=os.path.join(extracted_data_files_directory, file_name)
                     )
 
-                    single_event_soup = read_data(
+                    single_event_soup = read_html_data(
                         file_path=os.path.join(extracted_data_files_directory, file_name)
                     )
 
@@ -204,7 +204,7 @@ def create_df_with_lines(extracted_data_files_directory: str):
         file_path=os.path.join(extracted_data_files_directory, all_games_file_name)
     )
 
-    all_games_soup = read_data(
+    all_games_soup = read_html_data(
         file_path=os.path.join(extracted_data_files_directory, all_games_file_name)
     )
 

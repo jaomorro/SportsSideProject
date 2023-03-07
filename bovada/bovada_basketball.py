@@ -5,7 +5,7 @@ import pandas as pd
 import os
 import random
 from pathlib import Path
-from utility.helper_functions import extract_from_url, read_data, read_json_file, get_data_directory
+from utility.helper_functions import extract_from_url, read_json_file, get_data_directory
 from utility.logging_utils import create_logger
 import argparse
 
