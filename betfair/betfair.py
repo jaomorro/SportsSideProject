@@ -264,4 +264,4 @@ if __name__ == "__main__":
     bovada_basketball = Betfair("basketball")
 
     df_bet_info = bovada_basketball.create_df_with_lines(uid_timestamp)
-    df_bet_info.to_csv(os.path.join(bovada_basketball.get_output_directory(), "betfair.csv"), index=False)
+    df_bet_info.to_csv(os.path.join(bovada_basketball.output_directory, "betfair.csv"), index=False)

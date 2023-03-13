@@ -39,13 +39,17 @@ class Bovada(SportsBetting):
         data_records = []
         event_list = []
 
+        logger.info(f"Length of bets list = {len(bets_json_data)}")
         for i in range(len(bets_json_data)):
+            logger.info(f'i = {i}, {bets_json_data[i]["path"][0]["link"]}')
             if bets_json_data[i]["path"][0]["link"] == f"/{self.sport}/nba":
                 competition = bets_json_data[i]["path"][0]["link"].split("/")[-1]
+                logger.info(f'Number of events = {len(bets_json_data[i]["events"])}')
                 for event in bets_json_data[i]["events"]:
                     event_id = event["id"]
                     event_date = datetime.fromtimestamp(event["startTime"]/1000).strftime('%Y-%m-%d')
                     is_live = event["displayGroups"][0]["markets"][0]["period"]["live"]
+                    logger.info(f"is_live = {is_live} : {event_id, event_date, competition}")
                     if is_live == False:
 
                         for teams in event["competitors"]:
@@ -219,4 +223,4 @@ if __name__ == "__main__":
     # output_directory = bovada_basketball.get_output_directory()
 
     df_bet_info = bovada_basketball.create_df_with_lines(uid_timestamp)
-    df_bet_info.to_csv(os.path.join(bovada_basketball.get_output_directory(), "bovada.csv"), index=False)
+    df_bet_info.to_csv(os.path.join(bovada_basketball.output_directory, "bovada.csv"), index=False)

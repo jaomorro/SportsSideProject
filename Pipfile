@@ -7,6 +7,7 @@ name = "pypi"
 pandas = "*"
 requests = "*"
 bs4 = "*"
+duckdb = "*"
 
 [dev-packages]
 ipython = "*"

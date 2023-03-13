@@ -94,31 +94,62 @@ def read_json_file(file_path: str):
     return data
 
 
+def get_base_directory():
+    """
+    Create the base directory if it doesn't yet exist
+
+    return: the base directory
+    """
+
+    sports_arbitrage_data_directory = os.path.join(os.path.expanduser('~'), "sports_arbitrage_data")
+
+    create_directory(
+        sports_arbitrage_data_directory, 
+        False
+    
+    )
+
+    return sports_arbitrage_data_directory
+
+
 def get_data_directory(
         website: str,
         sport: str,
         uid_timestamp: int
 ):
     """
-    Retrieve the data directories for extracted data files and csv outputs
+    Retrieve the data directory for extracted data files
 
     :param extracted_data_files_directory: directory where extracted data files are stored
-    :return: data directories for extracted data files and csv outputs
+    :return: data directory for extracted data
     """
 
-    sports_arbitrage_data_directory = os.path.join(os.path.expanduser('~'), "sports_arbitrage_data")
+    sports_arbitrage_data_directory = get_base_directory()
 
     extracted_data_files_directory = os.path.join(sports_arbitrage_data_directory, f"{website}/{sport}/{uid_timestamp}")
-    output_directory = os.path.join(sports_arbitrage_data_directory, "output")
 
     create_directory(
         extracted_data_files_directory, 
         False
     
     )
+
+    return extracted_data_files_directory
+
+
+def get_output_directory():
+    """
+    Create output directory if it doesn't exist
+
+    return: ouptut directory
+    """
+
+    sports_arbitrage_data_directory = get_base_directory()
+    output_directory = os.path.join(sports_arbitrage_data_directory, "output")
+
     create_directory(
         output_directory, 
         False
     )
 
-    return extracted_data_files_directory, output_directory
+    return output_directory

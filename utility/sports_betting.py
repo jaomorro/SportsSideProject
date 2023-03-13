@@ -11,7 +11,12 @@ class SportsBetting(ABC):
     ):
         self.sport = sport
         self.sports_arbitrage_data_directory = os.path.join(os.path.expanduser('~'), "sports_arbitrage_data")
-        
+        self.output_directory = os.path.join(self.sports_arbitrage_data_directory, "output")
+
+        create_directory(
+            self.output_directory, 
+            False
+        )        
 
     def get_data_directory(
             self,
@@ -38,25 +43,25 @@ class SportsBetting(ABC):
         return extracted_data_files_directory
     
 
-    def get_output_directory(
-            self
-    ):
-        """
-        Retrieve the data directory for csv outputs
+    # def get_output_directory(
+    #         self
+    # ):
+    #     """
+    #     Retrieve the data directory for csv outputs
 
-        :return: data directory for csv outputs
-        """
+    #     :return: data directory for csv outputs
+    #     """
 
-        # sports_arbitrage_data_directory = os.path.join(os.path.expanduser('~'), "sports_arbitrage_data")
+    #     # sports_arbitrage_data_directory = os.path.join(os.path.expanduser('~'), "sports_arbitrage_data")
 
-        output_directory = os.path.join(self.sports_arbitrage_data_directory, "output")
+    #     output_directory = os.path.join(self.sports_arbitrage_data_directory, "output")
 
-        create_directory(
-            output_directory, 
-            False
-        )
+    #     create_directory(
+    #         output_directory, 
+    #         False
+    #     )
 
-        return output_directory
+    #     return output_directory
 
 
     @abstractmethod
